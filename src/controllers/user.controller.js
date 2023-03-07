@@ -15,10 +15,11 @@ const createUser = async (req, res) => {
   }
 };
 
-// const listUsers = async (_req, res) => {
-//   const { message } = await userService.findAll();
-//   res.status(200).json(message);
-// };
+const getAllUsers = async (_req, res) => {
+  const message = await UserService.getAllUsers();
+  res.status(200).json(message);
+};
+
 // const getUser = async (req, res) => {
 //   const { id } = req.params;
 //   const { type, message } = await userService.findById(id);
@@ -42,4 +43,5 @@ const createUser = async (req, res) => {
 
 module.exports = {
   createUser,
+  getAllUsers,
 };

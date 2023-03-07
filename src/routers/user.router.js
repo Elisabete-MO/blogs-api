@@ -1,5 +1,6 @@
 const express = require('express');
 const { userController } = require('../controllers');
+const validateToken = require('../auth/validateJWT');
 const validateEmail = require('../middlewares/validateEmail');
 const validatePassword = require('../middlewares/validatePassword');
 const validateUsername = require('../middlewares/validateUsername');
@@ -14,7 +15,7 @@ router.post(
   userController.createUser,
 );
 
-// router.get('/', userController.listUsers,);
+router.get('/', validateToken, userController.getAllUsers);
 // router.get('/:id', userController.getUser,);
 // router.put('/:id', userController.updateUser,);
 // router.delete('/:id', userController.deleteUser,);
