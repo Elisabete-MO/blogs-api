@@ -12,4 +12,6 @@ router.post(
   postController.createPost,
 );
 
+router.get('/', validateToken, postController.getAllPosts);
+
 module.exports = router;
