@@ -15,11 +15,15 @@ router.post(
 
 router.get('/', validateToken, postController.getAllPosts);
 router.get('/:id', validateToken, postController.getByPostId);
+
 router.put(
   '/:id',
   validateToken,
   validateUpdateDataPost,
   postController.editByPostId,
 );
+
+router.delete('/:id', validateToken, postController.deleteByPostId);
+
 
 module.exports = router;
