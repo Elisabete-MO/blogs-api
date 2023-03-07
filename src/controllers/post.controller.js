@@ -41,8 +41,21 @@ const getByPostId = async (req, res) => {
   res.status(200).json(post);
 };
 
+const editByPostId = async (req, res) => {
+  const userId = req.user.id;
+  const { id } = req.params;
+  const { title, content } = req.body;
+  const post = await PostService.getByPostId(id);
+  if (post.userId !== userId) return res.status(401).json({ message: 'Unauthorized user' });
+  if (!post) return res.status(404).json({ message: 'Post does not exist' });
+  await PostService.editByPostId(id, { title, content });
+  const editedPost = await PostService.getByPostId(id);
+  res.status(200).json(editedPost);
+};
+
 module.exports = {
   createPost,
   getAllPosts,
   getByPostId,
+  editByPostId,
 };

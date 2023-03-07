@@ -2,6 +2,7 @@ const express = require('express');
 const validateToken = require('../auth/validateJWT');
 const { postController } = require('../controllers');
 const validateDataPost = require('../middlewares/validateDataPost');
+const validateUpdateDataPost = require('../middlewares/validateUpdateDataPost');
 
 const router = express.Router();
 
@@ -14,6 +15,11 @@ router.post(
 
 router.get('/', validateToken, postController.getAllPosts);
 router.get('/:id', validateToken, postController.getByPostId);
-
+router.put(
+  '/:id',
+  validateToken,
+  validateUpdateDataPost,
+  postController.editByPostId,
+);
 
 module.exports = router;

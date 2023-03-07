@@ -34,9 +34,14 @@ const getByPostId = (postId) => BlogPost.findByPk(postId, {
   attributes: { exclude: ['UserId', 'createdAt', 'updatedAt'] },
 });
 
+const editByPostId = async (id, updatedPostData) => {
+  await BlogPost.update(updatedPostData, { where: { id } });
+};
+
 module.exports = {
   createPost,
   createPostCategories,
   getAllPosts,
   getByPostId,
+  editByPostId,
 };
