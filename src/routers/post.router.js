@@ -25,5 +25,4 @@ router.put(
 
 router.delete('/:id', validateToken, postController.deleteByPostId);
 
-
 module.exports = router;

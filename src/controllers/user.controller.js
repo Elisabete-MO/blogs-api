@@ -27,23 +27,17 @@ const getUserById = async (req, res) => {
   res.status(200).json(user);
 };
 
-// const deleteUser = async (req, res) => {
-//   const { id } = req.params;
-//   const { type, message } = await userService.deleteUser(id);
-//   if (type) return res.status(errorMap.mapError(type)).json({ message });
-//   res.status(204).end();
-// };
-
-// const updateUser = async (req, res) => {
-//   const { id } = req.params;
-//   const user = req.body;
-//   const { type, message } = await userService.updateUser(id, user);
-//   if (type) return res.status(errorMap.mapError(type)).json({ message });
-//   res.status(200).json(message);
-// };
+const deleteByLoginId = async (req, res) => {
+  const { id } = req.user;
+  const user = await UserService.getByUserId(id);
+  if (!user) return res.status(404).json({ message: 'User does not exist' });
+  await UserService.deleteByLoginId(id);
+  res.status(204).end();
+};
 
 module.exports = {
   createUser,
   getAllUsers,
   getUserById,
+  deleteByLoginId,
 };

@@ -13,9 +13,14 @@ const getByUserId = (userId) => User.findByPk(userId, {
 
 const getByEmail = async (email) => User.findOne({ where: { email } });
 
+const deleteByLoginId = async (id) => {
+  await User.destroy({ where: { id } });
+};
+
 module.exports = {
   getByEmail,
   createUser,
   getByUserId,
   getAllUsers,
+  deleteByLoginId,
 };
