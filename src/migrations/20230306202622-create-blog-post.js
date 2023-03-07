@@ -21,10 +21,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      publishedAt: {
+      published: {
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated: {
         type: Sequelize.DATE
       }
     }, {

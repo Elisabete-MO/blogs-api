@@ -1,11 +1,14 @@
 const { User } = require('../models');
 
-// const createUser = ({ username, password }) => User.create({ username, password });
 // const getUsers = () => User.findAll();
 // const getByUserId = (userId) => User.findByPk(userId);
-
-const getByEmail = (email) => User.findOne({ where: { email } });
+const getByEmail = async (email) => User.findOne({ where: { email } });
+ 
+const createUser = async ({ displayName, password, email, image }) => {
+  User.create({ displayName, password, email, image });
+};
 
 module.exports = {
   getByEmail,
+  createUser,
 };
