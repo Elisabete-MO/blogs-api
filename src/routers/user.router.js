@@ -16,7 +16,7 @@ router.post(
 );
 
 router.get('/', validateToken, userController.getAllUsers);
-// router.get('/:id', userController.getUser,);
+router.get('/:id', validateToken, userController.getUserById,);
 // router.put('/:id', userController.updateUser,);
 // router.delete('/:id', userController.deleteUser,);
 

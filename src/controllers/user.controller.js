@@ -20,12 +20,13 @@ const getAllUsers = async (_req, res) => {
   res.status(200).json(message);
 };
 
-// const getUser = async (req, res) => {
-//   const { id } = req.params;
-//   const { type, message } = await userService.findById(id);
-//   if (type) return res.status(errorMap.mapError(type)).json({ message });
-//   res.status(200).json(message);
-// };
+const getUserById = async (req, res) => {
+  const { id } = req.params;
+  const user = await UserService.getByUserId(id);
+  if (!user) return res.status(404).json({ message: 'User does not exist' });
+  res.status(200).json(user);
+};
+
 // const deleteUser = async (req, res) => {
 //   const { id } = req.params;
 //   const { type, message } = await userService.deleteUser(id);
@@ -44,4 +45,5 @@ const getAllUsers = async (_req, res) => {
 module.exports = {
   createUser,
   getAllUsers,
+  getUserById,
 };
