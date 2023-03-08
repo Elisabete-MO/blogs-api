@@ -63,10 +63,19 @@ const deleteByPostId = async (req, res) => {
   res.status(204).end();
 };
 
+const searchPosts = async (req, res) => {
+  const { q } = req.query;
+  const searchTerm = q.toLowerCase();
+  const posts = await PostService.searchPosts(searchTerm);
+  if (!posts) return res.status(404).json({ message: 'Post does not exist' });
+  res.status(200).json(posts);
+};
+
 module.exports = {
   createPost,
   getAllPosts,
   getByPostId,
   editByPostId,
   deleteByPostId,
+  searchPosts,
 };

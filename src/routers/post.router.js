@@ -13,6 +13,8 @@ router.post(
   postController.createPost,
 );
 
+router.get('/search', validateToken, postController.searchPosts);
+
 router.get('/', validateToken, postController.getAllPosts);
 router.get('/:id', validateToken, postController.getByPostId);
 
