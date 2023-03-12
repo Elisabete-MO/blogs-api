@@ -1,13 +1,20 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Projeto API de Blogs :memo:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+(individual - data de entrega 14/03/2023)
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Este projeto consiste em uma API e um banco de dados para a produção de conteúdo de um blog. A aplicação foi desenvolvida em Node.js, utilizando o pacote sequelize para fazer um CRUD de posts.
+
+Deploy: <a href="https://starwars-project-betemrt.glitch.me/">API de Blogs</a>
+
+### Funcionalidades
+- Desenvolvimento de endpoints seguindo os princípios do REST;
+- Relação entre usuário e post para possibilitar a publicação de posts por usuários cadastrados;
+- Utilização de categorias para os posts, com relação entre as categorias e os posts;
+- Criação de tokens, autenticação e validação de usuários por JWT.
+### Tecnologias utilizadas
+- Node.js
+- Sequelize
+- Express
+- JWT 
+
+:rotating_light: - a pasta SRC contem os arquivos desenvolvidos por mim. As demais pastas contem arquivos desenvolvidos pela Trybe.
