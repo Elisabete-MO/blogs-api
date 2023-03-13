@@ -4,7 +4,7 @@
 
 Este projeto consiste em uma API e um banco de dados para a produção de conteúdo de um blog. A aplicação foi desenvolvida em Node.js, utilizando o pacote sequelize para fazer um CRUD de posts.
 
-Deploy: <a href="https://starwars-project-betemrt.glitch.me/">API de Blogs</a>
+Deploy: <a href="blogs-api-production-dc62.up.railway.app">API de Blogs</a>
 
 ### Funcionalidades
 - Desenvolvimento de endpoints seguindo os princípios do REST;
